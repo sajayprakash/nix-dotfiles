@@ -7,7 +7,10 @@
     # inputs.nix-colors.homeManagerModule
 
     # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
+    ./kitty.nix
+    ./dunst.nix
+    ./i3.nix
+    ./rofi.nix
   ];
 
   nixpkgs = {
@@ -49,6 +52,8 @@
       pavucontrol
       pcmanfm
       lxqt.lxqt-policykit
+      dunst
+      rofi
   ];
 
   # Enable home-manager and git

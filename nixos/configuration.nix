@@ -92,7 +92,6 @@
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
-	ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBmJhsUepCSHGcpVWR3ZkADYOUFFWrUpHeAnxZkS9v9+ sajayprakash7@protonmail.com
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = [ "networkmanager" "wheel" ];
@@ -101,6 +100,40 @@
 
   # Enable GVFS
   services.gvfs.enable = true;
+  
+  #Pipewire
+  # rtkit is optional but recommended
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+  };
+
+  #Picom
+  services.picom.enable = true;
+  services.picom.fade = true;
+  services.picom.activeOpacity = 1.0;
+  services.picom.inactiveOpacity = 1.0;
+  services.picom.menuOpacity = 1.0;
+  services.picom.opacityRules = [
+    "100:class_g = 'mpv'"
+    "100:class_g = 'librewolf'"
+    "100:class_g = 'Virt-manager'"
+    "100:class_g = 'pyrogenesis'"
+    "100:class_g = 'kdenlive'"
+    "100:class_g = '0ad'"
+    "100:class_g = 'Gimp'"
+    "100:class_g = 'qutebrowser'"
+    "100:class_g = 'vlc'"
+    "100:class_g = 'Brave-browser'"
+  ];
+
+
+
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
