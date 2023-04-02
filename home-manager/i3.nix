@@ -174,5 +174,6 @@
     exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144
     exec --no-startup-id picom
     exec --no-startup-id dunst 
+    exec --no-startup-id lxqt-policykit-agent 
   '';
 }
