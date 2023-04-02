@@ -12,6 +12,7 @@
     ./i3.nix
     ./i3status.nix
     ./rofi.nix
+    ./zsh.nix
   ];
 
   nixpkgs = {
@@ -63,6 +64,15 @@
     enable = true;
     userEmail = "sajayprakash7@protonmail.com";
     userName = "sajayprakash";
+  };
+  
+  xdg.enable = true;
+
+  # Set XCursor
+  home.pointerCursor = {
+    name = "Adwaita";
+    package = pkgs.gnome.adwaita-icon-theme;
+    size = 32;
   };
 
   # Nicely reload system units when changing configs
