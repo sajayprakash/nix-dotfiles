@@ -15,6 +15,8 @@
       hnix="nvim ~/.dotfiles/home-manager/home.nix";
       apuser="sh ~/.dotfiles/apply-user.sh";
       apsys="sh ~/.dotfiles/apply-system.sh";
+      sdn="sudo shutdown now";
+      srb="sudo reboot";
     };
     initExtra = ''
       autoload -U colors && colors

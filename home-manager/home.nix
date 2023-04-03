@@ -13,6 +13,7 @@
     ./i3status.nix
     ./rofi.nix
     ./zsh.nix
+    ./awesome.nix
   ];
 
   nixpkgs = {

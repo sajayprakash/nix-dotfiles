@@ -71,7 +71,7 @@
 
     displayManager = {
       lightdm.enable = true;
-      defaultSession = "none+i3";
+      defaultSession = "none+awesome";
     };
     windowManager.i3 = {
       enable = true;
@@ -79,6 +79,13 @@
         dmenu
 	i3status
 	i3lock
+      ];
+    };
+    windowManager.awesome = {
+      enable = true;
+      luaModules = with pkgs.luaPackages; [
+        luarocks # is the package manager for Lua modules
+        luadbi-mysql # Database abstraction layer
       ];
     };
   };
